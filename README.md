@@ -1,5 +1,7 @@
 # โปรแกรมคำนวณค่า Factor F งานก่อสร้าง
 
+### 👉 เปิดใช้งาน: **https://dstaokung.github.io/factor-f-calculator/**
+
 เว็บแอปหน้าเดียว (single-file HTML) สำหรับหาค่า **Factor F** ของงานก่อสร้าง ตามตารางแนบท้ายหนังสือกรมบัญชีกลาง
 **ด่วนที่สุด ที่ กค 0433.2/ว 481 ลงวันที่ 26 มิถุนายน 2569** (อัตราดอกเบี้ยเงินกู้ร้อยละ 6 ต่อปี, VAT ร้อยละ 7)
 
@@ -28,7 +30,7 @@
 
 ## การใช้งาน
 
-**ออนไลน์:** เปิด GitHub Pages ของ repo นี้
+**ออนไลน์:** https://dstaokung.github.io/factor-f-calculator/
 
 **ออฟไลน์:** ดาวน์โหลด `index.html` **พร้อมโฟลเดอร์ `pages/`** วางไว้ที่เดียวกัน แล้วเปิดด้วยเบราว์เซอร์ได้เลย
 (ถ้าย้าย `index.html` ไปไฟล์เดียวโดด ๆ ทุกอย่างยังใช้งานได้ปกติ เพียงแต่ภาพสำเนาตารางต้นฉบับจะไม่ขึ้น)
@@ -118,6 +120,7 @@ F = Fแถวล่าง + (Fแถวบน − Fแถวล่าง) × R
 ## การเผยแพร่ด้วย GitHub Pages
 
 repo นี้มี workflow `.github/workflows/pages.yml` ที่เผยแพร่ให้อัตโนมัติทุกครั้งที่ push เข้า `main`
+เผยแพร่อยู่ที่ https://dstaokung.github.io/factor-f-calculator/
 
 ตั้งค่าครั้งเดียว: **Settings → Pages → Build and deployment → Source = GitHub Actions**
 
