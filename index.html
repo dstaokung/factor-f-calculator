@@ -396,7 +396,7 @@
     .orig-legend{display:none;}
     .orig-img{
       display:block; margin:0 auto; box-shadow:none; border:.5pt solid #ccd6e6;
-      width:auto; height:auto; max-width:100%; max-height:262mm;
+      width:auto; height:auto; max-width:100%; max-height:272mm;
     }
     .tbl-wrap{overflow:visible; border:none; border-radius:0;}
     table.ff{font-size:8.5pt;}
@@ -417,11 +417,12 @@
 
     /* attached copy of the circular letter — always its own last page */
     #letterSection{break-before:page; page-break-before:always; padding-top:0;}
-    #letterSection .section-title{margin-bottom:6px;}
+    /* pages 2–3: print only the scanned page itself, no heading */
+    #tableSection .section-title,#letterSection .section-title{display:none !important;}
     .letter-wrap{border:none; border-radius:0; padding:0; break-inside:avoid; display:block;}
     .letter-img{
       display:block; margin:0 auto; box-shadow:none; border:.5pt solid #ccd6e6;
-      width:auto; height:auto; max-width:100%; max-height:262mm;
+      width:auto; height:auto; max-width:100%; max-height:272mm;
     }
     .sig-block{break-inside:avoid;}
     a{text-decoration:none; color:inherit;}
@@ -481,7 +482,6 @@
       <span>อัตราดอกเบี้ยเงินกู้: <b>ร้อยละ 6 ต่อปี</b></span>
       <span>ภาษีมูลค่าเพิ่ม (VAT): <b>ร้อยละ 7</b></span>
       <span>ครอบคลุม <b>4 ประเภทงาน • 48 ตาราง</b></span>
-      <span class="print-only" style="display:none">พิมพ์เมื่อ: <b id="printDate">—</b></span>
     </div>
 
     <!-- ========== 1. INPUT ========== -->
@@ -707,11 +707,6 @@ function fmt(n,d){
 function fmtMB(n){ // trim trailing zeros for readability but keep at least 1 decimal
   var s=fmt(n,4).replace(/(\.\d*?)0+$/,"$1").replace(/\.$/,"");
   return s.indexOf(".")===-1?s:s;
-}
-function thaiDate(dt){
-  var m=["มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม"];
-  return dt.getDate()+" "+m[dt.getMonth()]+" "+(dt.getFullYear()+543)+" เวลา "+
-    ("0"+dt.getHours()).slice(-2)+":"+("0"+dt.getMinutes()).slice(-2)+" น.";
 }
 
 /* ============================================================
@@ -1035,7 +1030,6 @@ function renderTable(typeKey,tableKey,colIdx,r){
 /* ============================================================
    6. INIT
 ============================================================ */
-$("printDate").textContent=thaiDate(new Date());
 recalc();
 
 })();
